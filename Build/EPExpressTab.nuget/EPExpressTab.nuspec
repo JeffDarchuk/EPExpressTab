@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>EPExpressTab</id>
+    <version>$version$</version>
+    <title>EPExpressTab</title>
+    <authors>Jeff Darchuk</authors>
+    <owners>Jeff Darchuk</owners>
+        <licenseUrl>http://opensource.org/licenses/MIT</licenseUrl>
+        <projectUrl>https://github.com/JeffDarchuk/EPExpress</projectUrl>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Experience Profile Express Tab aims to make adding tabs to the Experience Profile as easy as possible</description>
+        <copyright>Copyright 2017 Jeff Darchuk</copyright>
+        <tags>sitecore</tags>
+	<dependencies>
+		<dependency id="EPExpressTab.Core" version="$version$" />
+	</dependencies>
+  </metadata>
+  	<files>
+		<file src="..\..\EPExpressTab\EpExpressTab.config" target="content\App_Config\Include" />
+	</files>
+</package>

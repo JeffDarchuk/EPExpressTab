@@ -9,15 +9,20 @@ using Sitecore.Analytics.Tracking;
 
 namespace EPExpressTab
 {
-	public class viewtest : EpExpressViewModel
+	public class EpExpressViewDemo : EpExpressViewModel
 	{
-		public override string Heading => "Stuffs and things";
-		public override string TabLabel => "my super tab";
+		public override string Heading => "Look Ma!  MVC!";
+		public override string TabLabel => "Special MVC Tab";
+		public override bool UseDefaultWrapper => false;
+
 		public override object GetModel(Contact contact)
 		{
-			return contact;
+			return new EpExpressDemoModel
+			{
+				ContactId = contact.ContactId.ToString(),
+				VisitCount = (int)((dynamic)contact).VisitCount
+			};
 		}
-
 		public override string GetFullViewPath(object model)
 		{
 			return "/views/EpExpressDemo.cshtml";

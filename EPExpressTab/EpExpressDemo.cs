@@ -8,13 +8,13 @@ using Sitecore.Analytics.Tracking;
 
 namespace EPExpressTab
 {
-	public class test : EpExpressModel
+	public class EpExpressDemo : EpExpressModel
 	{
 		public override string TabLabel => "Awesome Tab";
 		public override string Heading => "This is the start of something";
 		public override string RenderToString(Contact model)
 		{
-			return "<h1>potato<h1>" + model.ContactId;
+			return $"<h1>AWESOME!!</h1><p>{model.ContactId}</p>";
 		}
 	}
 }
