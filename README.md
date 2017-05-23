@@ -7,7 +7,19 @@ This can be as simple as a single step process.
 
 ## Installation
 This is available by nuget, there are two packages available [here](https://www.nuget.org/packages/EPExpressTab/) for the binary and config or [here](https://www.nuget.org/packages/EPExpressTab.Core/) if you just need the binary and are planning to manually install the config.
-
+```xml
+<?xml version="1.0"?>
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/">
+	<sitecore>
+		<pipelines>
+			<initialize>
+				<processor type="EPExpressTab.Pipelines.Initialize.Initialize, EPExpressTab" >
+				</processor>
+			</initialize>
+		</pipelines>
+	</sitecore>
+</configuration>
+```
 ## Get started quick
 Can we make a new Experience Profile tab in 9 lines of code?  yes we can!
 ```cs
