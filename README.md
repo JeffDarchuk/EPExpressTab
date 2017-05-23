@@ -1,5 +1,5 @@
 # Experience Profile Express Tab
-The purpose of the EPExpress Tab module is to streamline the creation of new tabs into the Experience Profile.  Normally to do this involves a many step process that you can read about (here)[https://community.sitecore.net/technical_blogs/b/getting_to_know_sitecore/posts/using-custom-contact-data-part-1-experience-profile].
+The purpose of the EPExpress Tab module is to streamline the creation of new tabs into the Experience Profile.  Normally to do this involves a many step process that you can read about [here](https://community.sitecore.net/technical_blogs/b/getting_to_know_sitecore/posts/using-custom-contact-data-part-1-experience-profile).
 
 ## A Better way
 By Automating the process and simplifying the output we can convert this process into a format that's a little more familiar to the average web developer by Looking at this from the perspective of a standard MVC setup
