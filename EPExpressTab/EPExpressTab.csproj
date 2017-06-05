@@ -83,17 +83,16 @@
     <Compile Include="Data\EpExpressViewModel.cs" />
     <Compile Include="Data\Interface\IEpExpressModel.cs" />
     <Compile Include="EpContext.cs" />
-    <Compile Include="EpExpressDemoModel.cs" />
-    <Compile Include="EpExpressViewDemo.cs" />
     <Compile Include="Handlers\EpExpressTabRenderer.cs" />
     <Compile Include="Pipelines\Initialize\Initialize.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="EpExpressDemo.cs" />
     <Compile Include="ViewRenderer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="EpExpressTab.config" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

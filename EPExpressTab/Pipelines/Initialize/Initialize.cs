@@ -28,7 +28,7 @@ namespace EPExpressTab.Pipelines.Initialize
 			Database core = Factory.GetDatabase("core", false);
 			if (core == null)
 				return;
-			EpContext.Tabs = AppDomain.CurrentDomain.GetAssemblies().SelectMany(GetEpTabs).Select(t => (EpExpressModel)Activator.CreateInstance(t)).ToDictionary(x => x.GetType().AssemblyQualifiedName);
+			EpContext.Tabs = AppDomain.CurrentDomain.GetAssemblies().Where(x => !Constants.BinaryBlacklist.Contains(x.GetName().Name)).SelectMany(GetEpTabs).Select(t => (EpExpressModel)Activator.CreateInstance(t)).ToDictionary(x => x.GetType().AssemblyQualifiedName);
 			using (new SecurityDisabler())
 			{
 				Item tabs = core.GetItem(Constants.EpTabsFolder);
