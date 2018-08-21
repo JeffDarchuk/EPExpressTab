@@ -27,8 +27,10 @@ Can we make a new Experience Profile tab in 9 lines of code?  yes we can!
 	{
 		public override string TabLabel => "Awesome Tab";
 		public override string Heading => "This is the start of something";
-		public override string RenderToString(Contact model)
+		public override string RenderToString(Guid contactId)
 		{
+			Sitecore.XConnect.Contact model = EPRepository.GetContact(contactId, "Your Custom Facet Key");
+			
 			return $"<h1>AWESOME!!</h1><p>{model.ContactId}</p>";
 		}
 	}
@@ -46,8 +48,10 @@ To do this use the EpExpressView base class instead of EpExpressModel
 	{
 		public override string Heading => "Look Ma!  MVC!";
 		public override string TabLabel => "Special MVC Tab";
-		public override object GetModel(Contact contact)
+		public override object GetModel(Guid contactId)
 		{
+			Sitecore.XConnect.Contact contact = EPRepository.GetContact(contactId, "Your Custom Facet Key");
+
 			return new EpExpressDemoModel
 			{
 				ContactId = contact.ContactId.ToString(),
