@@ -12,6 +12,7 @@ using EPExpressTab.Handlers;
 using Sitecore;
 using Sitecore.Configuration;
 using Sitecore.Data;
+using Sitecore.Data.Events;
 using Sitecore.Data.Items;
 using Sitecore.Pipelines;
 using Sitecore.SecurityModel;
@@ -29,7 +30,9 @@ namespace EPExpressTab.Pipelines.Initialize
 			if (core == null)
 				return;
 			EpContext.Tabs = AppDomain.CurrentDomain.GetAssemblies().Where(x => !Constants.BinaryBlacklist.Contains(x.GetName().Name)).SelectMany(GetEpTabs).Select(t => (EpExpressModel)Activator.CreateInstance(t)).ToDictionary(x => x.GetType().AssemblyQualifiedName);
-			using (new SecurityDisabler())
+			
+            using (new EventDisabler())
+            using (new SecurityDisabler())
 			{
 				Item tabs = core.GetItem(Constants.EpTabsFolder);
 				Item rendering = core.GetItem(Constants.EpExpressRendering);
